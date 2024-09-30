@@ -14,13 +14,15 @@ $growth_banner = get_field('growth_banner');
 
     <div class="grid grid-cols-12 gap-4">
       <div class="col-span-5">
-        <div class="accordion space-y-4" id="growth-accordion">
+        <div class="accordion space-y-4" id="growth-accordion" role="tablist">
           <?php if (!empty($growth_tabs)) : ?>
             <?php foreach ($growth_tabs as $key => $tab) : ?>
               <div class="accordion-item accordion-default">
                 <h2 class="accordion-header">
-                  <div class="accordion-action" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $key; ?>" aria-expanded="true" aria-controls="collapse<?php echo $key; ?>">
-                    <span data-aos="fade" data-aos-delay="<?php echo $key * 100; ?>"><?php echo $tab['tab_label'] ?? ''; ?></span>
+                  <div data-bs-toggle="tab" data-bs-target="#tab<?php echo $key; ?>">
+                    <div class="accordion-action" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $key; ?>" aria-expanded="true" aria-controls="collapse<?php echo $key; ?>">
+                      <span data-aos="fade" data-aos-delay="<?php echo $key * 100; ?>"><?php echo $tab['tab_label'] ?? ''; ?></span>
+                    </div>
                   </div>
                 </h2>
 
@@ -36,7 +38,15 @@ $growth_banner = get_field('growth_banner');
       </div>
 
       <div class="col-span-7">
-        <img data-aos="fade-up" src="<?php echo $growth_banner['url'] ?? ''; ?>" alt="">
+        <div class="tab-content">
+          <?php if (!empty($growth_tabs)) : ?>
+            <?php foreach ($growth_tabs as $key => $tab) : ?>
+              <div class="tab-pane fade" id="tab<?php echo $key; ?>" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                <img data-aos="fade-up" src="<?php echo $tab['tab_banner']['url'] ?? ''; ?>" alt="">
+              </div>
+            <?php endforeach; ?>
+          <?php endif; ?>
+        </div>
       </div>
     </div>
   </div>
