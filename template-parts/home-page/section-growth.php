@@ -1,0 +1,43 @@
+<?php
+$growth_heading = get_field('growth_heading');
+$growth_sub_heading = get_field('growth_sub_heading');
+$growth_tabs = get_field('growth_tabs');
+$growth_banner = get_field('growth_banner');
+?>
+
+<section class="section-growth bg-black">
+  <div class="container mx-auto bg-dark-main rounded-[30px] px-20 py-32 text-white -translate-y-14">
+    <div class="grid grid-cols-12 gap-4 mb-20">
+      <h2 class="text-[42px] font-bold col-span-6 self-center"><?php echo $growth_heading; ?></h2>
+      <p data-aos="fade-up" class="text-2xl col-span-6 self-center"><?php echo $growth_sub_heading; ?></p>
+    </div>
+
+    <div class="grid grid-cols-12 gap-4">
+      <div class="col-span-5">
+        <div class="accordion space-y-4" id="growth-accordion">
+          <?php if (!empty($growth_tabs)) : ?>
+            <?php foreach ($growth_tabs as $key => $tab) : ?>
+              <div class="accordion-item accordion-default">
+                <h2 class="accordion-header">
+                  <div class="accordion-action" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $key; ?>" aria-expanded="true" aria-controls="collapse<?php echo $key; ?>">
+                    <span data-aos="fade" data-aos-delay="<?php echo $key * 100; ?>"><?php echo $tab['tab_label'] ?? ''; ?></span>
+                  </div>
+                </h2>
+
+                <div id="collapse<?php echo $key; ?>" class="accordion-collapse collapse px-4 pb-4 mt-10" data-bs-parent="#growth-accordion">
+                  <div class="accordion-body space-y-4 p-0">
+                    <div class="text-lg leading-[24px]"><?php echo $tab['tab_content'] ?? ''; ?></div>
+                  </div>
+                </div>
+              </div>
+            <?php endforeach; ?>
+          <?php endif; ?>
+        </div>
+      </div>
+
+      <div class="col-span-7">
+        <img data-aos="fade-up" src="<?php echo $growth_banner['url'] ?? ''; ?>" alt="">
+      </div>
+    </div>
+  </div>
+</section>
