@@ -9,7 +9,7 @@ $sw_list = get_field('sw_list');
 
 <section class="section-masthead bg-no-repeat bg-center bg-cover" style="background-image: url(<?php echo $sw_banner['url'] ?? ''; ?>);">
   <div class="relative bg-blackOverlay py-32">
-    <div class="md:container mx-auto px-5 md:!px-0 text-white">
+    <div class="md:container mx-auto !px-5 md:!px-0 text-white">
       <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-10 md:mb-20">
         <h2 data-aos="fade-up" class="text-[42px] leading-[46px]">
           <?php echo $sw_title; ?>
@@ -26,19 +26,19 @@ $sw_list = get_field('sw_list');
       </div>
 
       <div class="grid grid-cols-12 gap-4 md:gap-20 mb-20 md:mb-0">
-        <div class="col-span-12 md:col-span-4">
+        <div class="col-span-12 xl:col-span-4 lg:col-span-6">
           <div class="border border-solid border-white space-y-5 px-8 py-14 rounded-3xl">
-            <h3 class="prose text-2xl leading-[36px] font-bold text-white"><?php echo $sw_body_card['heading'] ?? ''; ?></h3>
-            <div class="prose text-white"><?php echo $sw_body_card['content'] ?? ''; ?></div>
+            <h3 data-aos="fade-up" class="prose text-2xl leading-[36px] font-bold text-white"><?php echo $sw_body_card['heading'] ?? ''; ?></h3>
+            <div data-aos="fade-up" class="prose text-white"><?php echo $sw_body_card['content'] ?? ''; ?></div>
           </div>
         </div>
 
-        <div class="col-span-12 md:col-span-8">
+        <div class="col-span-12 xl:col-span-8 lg:col-span-12">
           <div class="grid grid-cols-12 gap-6">
             <?php if (!empty($sw_list)) : ?>
               <?php foreach ($sw_list as $key => $tab) : ?>
-                <div class="col-span-12 md:col-span-4">
-                  <div class="flex h-full space-x-5 pr-6 pb-10 !border-b border-t-0 border-r-0 border-l-0 border-solid border-white">
+                <div data-aos="fade-up" data-aos-delay="<?php echo $key * 100; ?>" class="col-span-12 md:col-span-4">
+                  <div class="flex h-full space-x-5 pr-6 pb-10">
                     <div class="basis-[36px] border border-white rounded-full !w-[36px] !h-[36px] flex items-center justify-center">
                       <img src="<?php echo $tab['icon']['url'] ?? ''; ?>" alt="">
                     </div>

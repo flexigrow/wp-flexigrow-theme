@@ -109,12 +109,12 @@ export function templates() {
 }
 
 export function watchTask() {
-  browserSync.init({
-    server: {
-      baseDir: "./dist",
-      index: "/index.html",
-    },
-  });
+  // browserSync.init({
+  //   server: {
+  //     baseDir: "./dist",
+  //     index: "/index.html",
+  //   },
+  // });
   watch("src/css/**/*.scss", styles);
   watch(paths.images.src, images);
   watch(paths.scripts.src, scripts).on("change", browserSync.reload);
