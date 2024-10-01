@@ -7,7 +7,7 @@ $sw_body_card = get_field('sw_body_card');
 $sw_list = get_field('sw_list');
 ?>
 
-<section class="section-masthead bg-no-repeat bg-center bg-cover" style="background-image: url(<?php echo $sw_banner['url'] ?? ''; ?>);">
+<section class="section-simpleway bg-no-repeat bg-center bg-cover" style="background-image: url(<?php echo $sw_banner['url'] ?? ''; ?>);">
   <div class="relative bg-blackOverlay py-32">
     <div class="md:container mx-auto !px-5 md:!px-0 text-white">
       <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-10 md:mb-20">
