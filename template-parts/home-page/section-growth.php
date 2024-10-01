@@ -6,7 +6,7 @@ $growth_banner = get_field('growth_banner');
 ?>
 
 <section class="section-growth bg-black">
-  <div class="container mx-auto bg-dark-main rounded-[30px] px-20 py-32 text-white -translate-y-14">
+  <div class="container mx-auto bg-dark-main md:rounded-[30px] !p-5 md:!px-20 md:!py-32 text-white md:-translate-y-14">
     <div class="grid grid-cols-12 gap-4 mb-10 md:mb-20">
       <h2 class="text-3xl md:text-[42px] font-bold col-span-12 md:col-span-6 self-center"><?php echo $growth_heading; ?></h2>
       <p data-aos="fade-up" class="text-xl md:text-2xl col-span-12 md:col-span-6 self-center"><?php echo $growth_sub_heading; ?></p>

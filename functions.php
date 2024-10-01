@@ -7,6 +7,9 @@ if (! defined('_S_VERSION')) {
     define('_S_VERSION', '1.0.0');
 }
 
+// require_once(get_stylesheet_directory() . '/inc/custom-header.php');
+
+
 // BEGIN ENQUEUE PARENT ACTION
 // AUTO GENERATED - Do not modify or remove comment markers above or below:
 
@@ -41,6 +44,3 @@ endif;
 add_action('wp_enqueue_scripts', 'child_theme_configurator_css', 20);
 
 // END ENQUEUE PARENT ACTION
-
-function test_scripts() {}
-add_action('wp_enqueue_scripts', 'test_scripts');

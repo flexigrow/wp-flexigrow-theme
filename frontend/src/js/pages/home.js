@@ -1,6 +1,5 @@
 $(function () {
   AOS.init({
-    // Global settings:
     disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
     startEvent: "DOMContentLoaded", // name of the event dispatched on the document, that AOS should initialize on
     initClassName: "aos-init", // class applied after initialization
@@ -20,6 +19,10 @@ $(function () {
     anchorPlacement: "top-bottom", // defines which position of the element regarding to window should trigger the animation
   });
 
+  handleGrowthAccordion();
+});
+
+function handleGrowthAccordion() {
   $("#growth-accordion")
     .on("shown.bs.collapse", function (event) {
       $(event.target).parent().addClass("accordion-active");
@@ -28,6 +31,5 @@ $(function () {
     .on("hide.bs.collapse", function (event) {
       $(event.target).parent().addClass("accordion-default");
       $(event.target).parent().removeClass("accordion-active");
-      console.log("hide");
     });
-});
+}

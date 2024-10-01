@@ -6,6 +6,11 @@ html {
   @apply mt-0 !important;
 }
 
+html,
+body {
+  @apply overflow-x-hidden !important;
+}
+
 .accordion-default {
   @apply bg-transparent !border border-solid border-transparent text-white !rounded-[30px];
 
