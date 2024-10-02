@@ -3,7 +3,34 @@ $growth_heading = get_field('growth_heading');
 $growth_sub_heading = get_field('growth_sub_heading');
 $growth_tabs = get_field('growth_tabs');
 $growth_banner = get_field('growth_banner');
+$growth_active_tab = get_field('growth_active_tab');
 ?>
+
+<script>
+  (function($) {
+    $(document).ready(function() {
+      // init first tab & collapse
+      $("#growth-accordion [data-bs-target='#tab<?php echo ($growth_active_tab ?? 1) - 1; ?>']").tab("show");
+      $(
+        "#growth-accordion [data-bs-target='#collapse<?php echo ($growth_active_tab ?? 1) - 1; ?>']:not(.collapse-mobile)"
+      ).collapse("show");
+      $("#growth-accordion #collapse<?php echo ($growth_active_tab ?? 1) - 1; ?>").collapse("show");
+
+      // handle collapse & accordion callback
+      $("#growth-accordion")
+        .on("shown.bs.collapse", function(event) {
+          $(event.target).parents(".accordion-item").addClass("accordion-active");
+        })
+        .on("hide.bs.collapse", function(event) {
+          const eventTarget = $(event.target)
+          eventTarget.parents(".accordion-item").addClass("accordion-default");
+          eventTarget
+            .parents(".accordion-item")
+            .removeClass("accordion-active");
+        });
+    });
+  })(jQuery);
+</script>
 
 <section class="section-growth bg-black">
   <div class="container mx-auto bg-dark-main md:rounded-[30px] !p-5 md:!px-20 md:!py-32 text-white md:-translate-y-14">
@@ -19,14 +46,16 @@ $growth_banner = get_field('growth_banner');
             <?php foreach ($growth_tabs as $key => $tab) : ?>
               <div class="accordion-item accordion-default">
                 <h2 class="accordion-header">
+                  <!-- desktop -->
                   <div class="hidden md:block" data-bs-toggle="tab" data-bs-target="#tab<?php echo $key; ?>">
                     <div class="accordion-action" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $key; ?>" aria-expanded="true" aria-controls="collapse<?php echo $key; ?>">
                       <span data-aos="fade" data-aos-delay="<?php echo $key * 100; ?>"><?php echo $tab['tab_label'] ?? ''; ?></span>
                     </div>
                   </div>
 
-                  <div class="md:hidden" data-bs-toggle="tab" data-bs-target="#mobile_tab<?php echo $key; ?>">
-                    <div class="accordion-action" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $key; ?>" aria-expanded="true" aria-controls="collapse<?php echo $key; ?>">
+                  <!-- mobile -->
+                  <div class="md:hidden tab-mobile" data-bs-toggle="tab" data-bs-target="#mobile_tab<?php echo $key; ?>">
+                    <div class="accordion-action collapse-mobile" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $key; ?>" aria-expanded="true" aria-controls="collapse<?php echo $key; ?>">
                       <span data-aos="fade" data-aos-delay="<?php echo $key * 100; ?>"><?php echo $tab['tab_label'] ?? ''; ?></span>
                     </div>
                   </div>

@@ -6,7 +6,7 @@ $card_1_content = get_field('card_1_content');
 $card_2_content = get_field('card_2_content');
 ?>
 
-<section class="section-business bg-black text-white py-32">
+<section class="section-business bg-black text-white py-10 md:py-32">
   <div class="md:container !px-5 md:px-0 mx-auto grid grid-cols-2 gap-2 md:gap-4">
     <div class="col-span-2 md:col-span-1">
       <div data-aos="fade" class="self-start space-y-10 prose-h2:text-5xl text-white mb-14">

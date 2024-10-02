@@ -37,3 +37,7 @@ body {
     @apply !border-t !border-white;
   }
 }
+
+.slick-slide {
+  @apply h-auto !important;
+}

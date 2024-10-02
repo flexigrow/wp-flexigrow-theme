@@ -7,6 +7,8 @@ wp_head();
 
 ?>
 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 
 <main class="bg-black">
   <?php get_template_part('template-parts/home-page/section', 'masthead'); ?>
