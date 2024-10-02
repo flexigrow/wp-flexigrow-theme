@@ -17,6 +17,7 @@ wp_head();
   <?php get_template_part('template-parts/home-page/section', 'tools'); ?>
   <?php get_template_part('template-parts/home-page/section', 'business'); ?>
   <?php get_template_part('template-parts/home-page/section', 'testimonial'); ?>
+  <?php get_template_part('template-parts/home-page/section', 'faq'); ?>
 
   <div class="h-[1000px]"></div>
 </main>

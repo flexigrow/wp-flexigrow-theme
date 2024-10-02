@@ -8,14 +8,14 @@ $tools_logo_group = get_field('tools_logo_group');
 ?>
 
 <section class="section-tools bg-no-repeat bg-center bg-cover text-white py-8 md:py-32" style="background-image: url(<?php echo $tools_background['url'] ?? ''; ?>);">
-  <div class="text-white flex flex-col md:flex-row items-center justify-between mb-20 gap-10">
+  <div class="text-white flex flex-col md:flex-row items-center justify-between mb-10 md:mb-20 gap-10">
     <div class="relative">
       <img class="w-[836px] relative z-10" src="<?php echo $tools_banner['url'] ?? ""; ?> " alt="">
       <img data-aos="fade" class="hidden md:block absolute top-full left-0 w-[220px] -translate-y-14 z-0" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/green-arrow.svg'; ?>" alt="">
     </div>
 
-    <div class="space-y-10 max-w-[638px] mx-auto">
-      <h2 data-aos="fade-up" class="text-[42px] font-bold">
+    <div class="space-y-10 md:max-w-[638px] mx-auto !px-5 md:!px-0">
+      <h2 data-aos="fade-up" class="text-3xl md:text-[42px] font-bold">
         <?php echo $tools_heading ?? ''; ?>
       </h2>
 

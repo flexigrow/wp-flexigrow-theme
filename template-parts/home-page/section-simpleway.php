@@ -8,10 +8,10 @@ $sw_list = get_field('sw_list');
 ?>
 
 <section class="section-simpleway bg-no-repeat bg-center bg-cover" style="background-image: url(<?php echo $sw_banner['url'] ?? ''; ?>);">
-  <div class="relative bg-blackOverlay py-32">
+  <div class="relative bg-blackOverlay py-12 md:py-32">
     <div class="md:container mx-auto !px-5 md:!px-0 text-white">
-      <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-10 md:mb-20">
-        <h2 data-aos="fade-up" class="text-[42px] leading-[46px]">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-8 md:mb-20">
+        <h2 data-aos="fade-up" class="text-3xl md:text-[42px] md:leading-[46px] font-semibold">
           <?php echo $sw_title; ?>
         </h2>
 
@@ -19,7 +19,7 @@ $sw_list = get_field('sw_list');
           <a href="<?php echo $sw_button_1['url'] ?? ''; ?>" class="text-primary-main font-bold underline hover:text-primary-main">
             <?php echo $sw_button_1['title'] ?? ''; ?>
           </a>
-          <a href="<?php echo $sw_button_2['url'] ?? ''; ?>" class="bg-primary-main text-dark-main rounded-full py-3 px-10 text-sm font-semibold">
+          <a href="<?php echo $sw_button_2['url'] ?? ''; ?>" class="bg-primary-main text-dark-main rounded-full py-3 px-10 text-sm font-semibold hover:bg-dark-main hover:ring-1 hover:ring-offset-1 hover:ring-offset-primary-main hover:text-primary-main transition">
             <?php echo $sw_button_2['title'] ?? ''; ?>
           </a>
         </div>
@@ -27,7 +27,7 @@ $sw_list = get_field('sw_list');
 
       <div class="grid grid-cols-12 gap-4 md:gap-20 mb-20 md:mb-0">
         <div class="col-span-12 xl:col-span-4 lg:col-span-6">
-          <div class="border border-solid border-white space-y-5 px-8 py-14 rounded-3xl">
+          <div class="border border-solid border-white space-y-5 !p-5 md:!px-8 md:!py-14 rounded-3xl">
             <h3 data-aos="fade-up" class="prose text-2xl leading-[36px] font-bold text-white"><?php echo $sw_body_card['heading'] ?? ''; ?></h3>
             <div data-aos="fade-up" class="prose text-white"><?php echo $sw_body_card['content'] ?? ''; ?></div>
           </div>

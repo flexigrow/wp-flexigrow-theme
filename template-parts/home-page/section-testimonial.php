@@ -9,13 +9,17 @@ $tools_logo_group = get_field('tools_logo_group');
 
 <section class="section-testimonial bg-no-repeat bg-center bg-cover text-white py-10 md:py-32">
   <div class="container mx-auto flex justify-between items-start">
-    <h2 class="text-white text-3xl md:text-4xl font-bold text-center mb-20 mx-auto">
+    <h2 class="text-white text-3xl md:text-4xl font-bold text-center mb-10 md:mb-20 mx-auto">
       <?php echo $tm_heading; ?>
     </h2>
 
     <div class="hidden md:flex items-center space-x-2 hover:ring-1 ring-offset-1 transition rounded-full p-2">
-      <div class="tm-slider-prev hover:bg-primary-main hover:text-dark-main transition cursor-pointer w-[40px] h-[40px] grid place-content-center border border-white rounded-full"><i class="fa-solid fa-arrow-left"></i></div>
-      <div class="tm-slider-next hover:bg-primary-main hover:text-dark-main transition cursor-pointer w-[40px] h-[40px] grid place-content-center border border-white rounded-full"><i class="fa-solid fa-arrow-right"></i></div>
+      <div class="tm-slider-prev hover:bg-primary-main hover:text-dark-main transition cursor-pointer w-[40px] h-[40px] grid place-content-center border border-white rounded-full">
+        <i class="fa-solid fa-arrow-left"></i>
+      </div>
+      <div class="tm-slider-next hover:bg-primary-main hover:text-dark-main transition cursor-pointer w-[40px] h-[40px] grid place-content-center border border-white rounded-full">
+        <i class="fa-solid fa-arrow-right"></i>
+      </div>
     </div>
   </div>
 
@@ -60,7 +64,11 @@ $tools_logo_group = get_field('tools_logo_group');
   </div>
 
   <div class="flex md:hidden justify-center space-x-2 rounded-full p-2 mt-10">
-    <div class="tm-slider-prev hover:bg-primary-main hover:text-dark-main transition cursor-pointer w-[40px] h-[40px] grid place-content-center border border-white rounded-full"><i class="fa-solid fa-arrow-left"></i></div>
-    <div class="tm-slider-next hover:bg-primary-main hover:text-dark-main transition cursor-pointer w-[40px] h-[40px] grid place-content-center border border-white rounded-full"><i class="fa-solid fa-arrow-right"></i></div>
+    <div class="tm-slider-prev hover:bg-primary-main hover:text-dark-main transition cursor-pointer w-[40px] h-[40px] grid place-content-center border border-white rounded-full">
+      <i class="fa-solid fa-arrow-left"></i>
+    </div>
+    <div class="tm-slider-next hover:bg-primary-main hover:text-dark-main transition cursor-pointer w-[40px] h-[40px] grid place-content-center border border-white rounded-full">
+      <i class="fa-solid fa-arrow-right"></i>
+    </div>
   </div>
 </section>

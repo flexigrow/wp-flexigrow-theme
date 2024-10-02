@@ -11,6 +11,8 @@ $(function () {
     slidesToShow: 1,
     slidesToScroll: 1,
     mobileFirst: true,
+    autoplay: true,
+    autoplaySpeed: 5000,
     prevArrow: ".tm-slider-prev",
     nextArrow: ".tm-slider-next",
     responsive: [

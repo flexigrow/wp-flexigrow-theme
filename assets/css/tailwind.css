@@ -18,7 +18,7 @@ body {
     @apply bg-transparent bg-dark-secondary mt-0 p-4 rounded-[30px];
   }
   .accordion-action {
-    @apply cursor-pointer inline-block bg-dark-light rounded-full text-base px-4 py-2 hover:text-primary-main transition;
+    @apply cursor-pointer inline-block bg-dark-light rounded-full text-base md:text-xl px-4 py-2 hover:text-primary-main transition;
   }
 }
 
