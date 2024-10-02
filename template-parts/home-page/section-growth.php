@@ -9,25 +9,60 @@ $growth_active_tab = get_field('growth_active_tab');
 <script>
   (function($) {
     $(document).ready(function() {
-      // init first tab & collapse
-      $("#growth-accordion [data-bs-target='#tab<?php echo ($growth_active_tab ?? 1) - 1; ?>']").tab("show");
-      $(
-        "#growth-accordion [data-bs-target='#collapse<?php echo ($growth_active_tab ?? 1) - 1; ?>']:not(.collapse-mobile)"
-      ).collapse("show");
-      $("#growth-accordion #collapse<?php echo ($growth_active_tab ?? 1) - 1; ?>").collapse("show");
 
-      // handle collapse & accordion callback
-      $("#growth-accordion")
-        .on("shown.bs.collapse", function(event) {
-          $(event.target).parents(".accordion-item").addClass("accordion-active");
-        })
-        .on("hide.bs.collapse", function(event) {
-          const eventTarget = $(event.target)
-          eventTarget.parents(".accordion-item").addClass("accordion-default");
-          eventTarget
-            .parents(".accordion-item")
-            .removeClass("accordion-active");
-        });
+      function debounce(func, delay) {
+        let timeout;
+
+        return function executedFunc(...args) {
+          if (timeout) {
+            clearTimeout(timeout);
+          }
+
+          timeout = setTimeout(() => {
+            func(...args);
+            timeout = null;
+          }, delay);
+        };
+      }
+
+      handleTabCollapse()
+
+      const debounceTabResize = debounce(handleTabCollapse, 200);
+
+      $(window).on('resize', function() {
+        debounceTabResize()
+      })
+
+      function handleTabCollapse() {
+        const isMobile = $(window).width() < 768;
+
+        // init first tab & collapse
+        if (isMobile) {
+          $(
+            "#growth-accordion [data-bs-target='#collapse<?php echo ($growth_active_tab ?? 1) - 1; ?>']:is(.collapse-mobile)"
+          ).collapse("show");
+          $("#growth-accordion #collapse<?php echo ($growth_active_tab ?? 1) - 1; ?>").collapse("show");
+        } else {
+          $("#growth-accordion [data-bs-target='#tab<?php echo ($growth_active_tab ?? 1) - 1; ?>']").tab("show");
+          $(
+            "#growth-accordion [data-bs-target='#collapse<?php echo ($growth_active_tab ?? 1) - 1; ?>']:not(.collapse-mobile)"
+          ).collapse("show");
+          $("#growth-accordion #collapse<?php echo ($growth_active_tab ?? 1) - 1; ?>").collapse("show");
+        }
+
+        // handle collapse & accordion callback
+        $("#growth-accordion")
+          .on("shown.bs.collapse", function(event) {
+            $(event.target).parents(".accordion-item").addClass("accordion-active");
+          })
+          .on("hide.bs.collapse", function(event) {
+            const eventTarget = $(event.target)
+            eventTarget.parents(".accordion-item").addClass("accordion-default");
+            eventTarget
+              .parents(".accordion-item")
+              .removeClass("accordion-active");
+          });
+      }
     });
   })(jQuery);
 </script>
@@ -65,7 +100,7 @@ $growth_active_tab = get_field('growth_active_tab');
                   <div class="accordion-body space-y-4 p-0">
                     <div class="text-lg leading-[24px]"><?php echo $tab['tab_content'] ?? ''; ?></div>
 
-                    <div class="md:hidden tab-pane fade" id="mobile_tab<?php echo $key; ?>" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                    <div class="md:hidden" id="mobile_tab<?php echo $key; ?>" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
                       <img data-aos="fade-up" src="<?php echo $tab['tab_banner']['url'] ?? ''; ?>" alt="">
                     </div>
                   </div>
