@@ -71,7 +71,7 @@ $growth_active_tab = get_field('growth_active_tab');
   <div class="container mx-auto bg-dark-main md:rounded-[30px] !p-5 md:!px-20 md:!py-32 text-white md:-translate-y-14">
     <div class="grid grid-cols-12 gap-4 mb-10 md:mb-20">
       <h2 class="text-3xl md:text-[42px] font-bold col-span-12 md:col-span-6 self-center"><?php echo $growth_heading; ?></h2>
-      <p data-aos="fade-up" class="text-xl md:text-2xl col-span-12 md:col-span-6 self-center"><?php echo $growth_sub_heading; ?></p>
+      <p class="wow animate__animated animate__fadeIn text-xl md:text-2xl col-span-12 md:col-span-6 self-center"><?php echo $growth_sub_heading; ?></p>
     </div>
 
     <div class="grid grid-cols-12 gap-4">
@@ -84,14 +84,14 @@ $growth_active_tab = get_field('growth_active_tab');
                   <!-- desktop -->
                   <div class="hidden md:block" data-bs-toggle="tab" data-bs-target="#tab<?php echo $key; ?>">
                     <div class="accordion-action" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $key; ?>" aria-expanded="true" aria-controls="collapse<?php echo $key; ?>">
-                      <span data-aos="fade" data-aos-delay="<?php echo $key * 100; ?>"><?php echo $tab['tab_label'] ?? ''; ?></span>
+                      <span class="wow animate__animated animate__fadeIn" data-wow-delay="<?php echo $key * 100; ?>ms"><?php echo $tab['tab_label'] ?? ''; ?></span>
                     </div>
                   </div>
 
                   <!-- mobile -->
                   <div class="md:hidden tab-mobile" data-bs-toggle="tab" data-bs-target="#mobile_tab<?php echo $key; ?>">
                     <div class="accordion-action collapse-mobile" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $key; ?>" aria-expanded="true" aria-controls="collapse<?php echo $key; ?>">
-                      <span data-aos="fade" data-aos-delay="<?php echo $key * 100; ?>"><?php echo $tab['tab_label'] ?? ''; ?></span>
+                      <span class="wow animate__animated animate__fadeIn" data-wow-delay="<?php echo $key * 100; ?>ms"><?php echo $tab['tab_label'] ?? ''; ?></span>
                     </div>
                   </div>
                 </h2>
@@ -101,7 +101,7 @@ $growth_active_tab = get_field('growth_active_tab');
                     <div class="text-lg leading-[24px]"><?php echo $tab['tab_content'] ?? ''; ?></div>
 
                     <div class="md:hidden" id="mobile_tab<?php echo $key; ?>" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-                      <img data-aos="fade-up" src="<?php echo $tab['tab_banner']['url'] ?? ''; ?>" alt="">
+                      <img class="wow animate__animated animate__fadeIn" src="<?php echo $tab['tab_banner']['url'] ?? ''; ?>" alt="">
                     </div>
                   </div>
                 </div>
@@ -116,7 +116,7 @@ $growth_active_tab = get_field('growth_active_tab');
           <?php if (!empty($growth_tabs)) : ?>
             <?php foreach ($growth_tabs as $key => $tab) : ?>
               <div class="tab-pane fade" id="tab<?php echo $key; ?>" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-                <img data-aos="fade-up" src="<?php echo $tab['tab_banner']['url'] ?? ''; ?>" alt="">
+                <img class="wow animate__animated animate__fadeIn" src="<?php echo $tab['tab_banner']['url'] ?? ''; ?>" alt="">
               </div>
             <?php endforeach; ?>
           <?php endif; ?>

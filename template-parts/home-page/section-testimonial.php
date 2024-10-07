@@ -9,7 +9,7 @@ $tools_logo_group = get_field('tools_logo_group');
 
 <section class="section-testimonial bg-no-repeat bg-center bg-cover text-white py-10 md:py-32">
   <div class="container mx-auto flex justify-between items-start">
-    <h2 class="text-white text-3xl md:text-4xl font-bold text-center mb-10 md:mb-20 mx-auto">
+    <h2 class="wow animate__fadeInUp text-white text-3xl md:text-4xl font-bold text-center mb-10 md:mb-20 mx-auto">
       <?php echo $tm_heading; ?>
     </h2>
 

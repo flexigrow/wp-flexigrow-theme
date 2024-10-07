@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --animate-duration: 800ms;
+}
+
 html {
   @apply mt-0 !important;
 }
@@ -9,6 +13,7 @@ html {
 html,
 body {
   @apply overflow-x-hidden !important;
+  font-family: "Poppins", sans-serif;
 }
 
 .accordion-default {
@@ -40,4 +45,22 @@ body {
 
 .slick-slide {
   @apply h-auto !important;
+}
+
+.header-menu-actions {
+  & li:first-child a {
+    @apply text-white bg-dark-main rounded-full border-white border-solid border text-sm py-2 px-8 font-medium hover:ring-1 hover:ring-offset-1 hover:ring-offset-primary-main hover:text-primary-main transition;
+  }
+  & li:nth-child(2) a {
+    @apply text-dark-main bg-primary-main rounded-full text-sm py-2 px-8 font-medium hover:bg-dark-main hover:ring-1 hover:ring-offset-1 hover:ring-offset-primary-main hover:text-primary-main transition;
+  }
+}
+
+.tm-header--scrolled {
+  @apply bg-dark-main shadow-2xl;
+}
+
+.menu--hover-effect-overlay {
+  @apply relative hover:after:w-full after:duration-200 after:ease-in-out after:z-10 after:transition-all;
+  @apply after:absolute after:top-full after:left-1/2 after:-translate-x-1/2 after:content-[''] after:block after:w-0 after:h-[1px] after:bg-primary-main;
 }

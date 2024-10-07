@@ -4,11 +4,7 @@ Template Name: Flexigrow Home Page
 */
 
 wp_head();
-
 ?>
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
 
 <main class="bg-black">
   <?php get_template_part('template-parts/home-page/section', 'masthead'); ?>
@@ -18,6 +14,5 @@ wp_head();
   <?php get_template_part('template-parts/home-page/section', 'business'); ?>
   <?php get_template_part('template-parts/home-page/section', 'testimonial'); ?>
   <?php get_template_part('template-parts/home-page/section', 'faq'); ?>
-
-  <div class="h-[1000px]"></div>
+  <?php get_template_part('template-parts/home-page/section', 'footer'); ?>
 </main>

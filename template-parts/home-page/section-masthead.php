@@ -12,10 +12,10 @@ $home_page_subheading = get_field('home_page_subheading');
 
     <div class="bg-black md:!bg-transparent !px-5 !py-10 md:!px-0 md:!py-0 md:container md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 text-white">
       <div class="space-y-5">
-        <h2 data-aos="fade-up" class="text-base md:first-letter:text-lg text-primary-main">
+        <h2 class="wow animate__animated animate__fadeIn text-base md:first-letter:text-lg text-primary-main">
           <?php echo $home_page_subheading; ?>
         </h2>
-        <h1 data-aos="fade-up" data-aos-delay="100" class="text-[42px] md:text-[56px] font-bold">
+        <h1 class="wow animate__animated animate__fadeIn text-[42px] md:text-[56px] font-bold">
           <?php echo $home_page_heading; ?>
         </h1>
       </div>
